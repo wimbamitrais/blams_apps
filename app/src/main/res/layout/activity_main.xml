@@ -5,16 +5,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.wimba.blams.MainActivity">
+    tools:context="com.app.wimba.blams.activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        android:padding="5dp"
-        tools:ignore="MissingConstraints">
+        android:padding="5dp">
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"

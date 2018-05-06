@@ -1,6 +1,5 @@
-package com.app.wimba.blams;
+package com.app.wimba.blams.activity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,12 +9,12 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
+import com.app.wimba.blams.R;
+import com.app.wimba.blams.util.EncyclopediaRVAdapter;
+import com.app.wimba.blams.model.Encyclopedia;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        encyclopedias = getDummyData();
 //
-//        RVAdapter rvAdapter = new RVAdapter(encyclopedias);
+//        EncyclopediaRVAdapter rvAdapter = new EncyclopediaRVAdapter(encyclopedias);
 //        recyclerView.setAdapter(rvAdapter);
 
         WisataTask mAuthTask = new WisataTask(4, 0);
@@ -168,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                     encyclopedia.setDescription(jsonEncyclopedia.getString("keterangan"));
 
                     List<Integer> images = new ArrayList<Integer>();
-                    images.add(R.drawable.pm1);
+                        images.add(R.drawable.pm1);
                     images.add(R.drawable.pm2);
                     images.add(R.drawable.pm3);
                     images.add(R.drawable.pm4);
@@ -183,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            RVAdapter rvAdapter = new RVAdapter(encyclopedias);
+            EncyclopediaRVAdapter rvAdapter = new EncyclopediaRVAdapter(encyclopedias);
             recyclerView.setAdapter(rvAdapter);
         }
 

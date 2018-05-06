@@ -1,9 +1,5 @@
-package com.app.wimba.blams.absclass;
+package com.app.wimba.blams.model;
 
-import com.app.wimba.blams.Comment;
-import com.app.wimba.blams.Like;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

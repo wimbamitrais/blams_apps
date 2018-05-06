@@ -1,6 +1,4 @@
-package com.app.wimba.blams;
-
-import com.app.wimba.blams.absclass.Account;
+package com.app.wimba.blams.model;
 
 import java.util.Date;
 

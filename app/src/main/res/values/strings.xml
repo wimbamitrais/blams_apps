@@ -26,7 +26,7 @@
 
 
     <!--Information for HTTP Connection-->
-    <string name="server_address">http://10.0.2.2:8080/blams_git/</string>
+    <string name="server_address">http://192.168.100.6:8080/blams_git/</string>
     <string name="client_service">blams_android</string>
     <string name="auth_key">01e71cc7e4ae223d54df20b275d198468ed395fc</string>
     <string name="content_type">application/x-www-form-urlencoded</string>

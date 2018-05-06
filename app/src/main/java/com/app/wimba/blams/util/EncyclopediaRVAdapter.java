@@ -1,4 +1,4 @@
-package com.app.wimba.blams;
+package com.app.wimba.blams.util;
 
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.wimba.blams.absclass.Content;
+import com.app.wimba.blams.R;
+import com.app.wimba.blams.activity.ResortDetailActivity;
+import com.app.wimba.blams.model.Encyclopedia;
 
 import java.util.List;
 
@@ -19,11 +21,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by IT02107 on 1/14/2018.
  */
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EncyclopediaViewHolder> {
+public class EncyclopediaRVAdapter extends RecyclerView.Adapter<EncyclopediaRVAdapter.EncyclopediaViewHolder> {
 
     List<Encyclopedia> encyclopedias;
 
-    RVAdapter(List<Encyclopedia> encyclopedias){
+    public EncyclopediaRVAdapter(List<Encyclopedia> encyclopedias){
         this.encyclopedias = encyclopedias;
     }
 
@@ -55,7 +57,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EncyclopediaViewHo
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ResortDetail.class);
+                Intent intent = new Intent(view.getContext(), ResortDetailActivity.class);
                 intent.putExtra("RESORT_ID", holder.resortId.toString());
                 intent.putExtra("RESORT_NAME", holder.title.getText());
                 view.getContext().startActivity(intent);
