@@ -5,22 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="90dp"
         android:orientation="vertical"
         android:padding="2dp"
-        android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_gravity="center">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/kuliner_icon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
             android:src="@android:color/holo_red_dark"
+            android:layout_gravity="top"
             app:civ_border_color="@android:color/white"
             app:civ_border_width="1dp"/>
 
@@ -30,7 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rujak Soto"
-            android:layout_marginBottom="2dp"/>
+            android:textSize="12sp"
+            android:layout_marginBottom="2dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"/>
 
 
     </LinearLayout>

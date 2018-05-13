@@ -26,13 +26,15 @@
 
 
     <!--Information for HTTP Connection-->
-    <string name="server_address">http://192.168.100.6:8080/blams_git/</string>
+    <string name="server_address">http://192.168.100.3:8080/blams_git/</string>
     <string name="client_service">blams_android</string>
     <string name="auth_key">01e71cc7e4ae223d54df20b275d198468ed395fc</string>
     <string name="content_type">application/x-www-form-urlencoded</string>
 
     <string name="api_login">api/Login_api/index</string>
     <string name="api_wisata_read">api/Wisata/read</string>
+    <string name="api_wisata_read_by_id">api/Wisata/read_id</string>
+
     <string name="title_activity_resort_detail">ResortDetail</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>

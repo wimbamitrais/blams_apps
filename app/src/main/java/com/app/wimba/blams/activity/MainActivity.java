@@ -9,6 +9,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.app.wimba.blams.R;
@@ -31,6 +34,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ProgressBar progressBar;
+    private LinearLayout linearMain;
     private RecyclerView recyclerView;
     private List<Encyclopedia> encyclopedias = new ArrayList<>();
     private TextView mTextMessage;
@@ -66,16 +71,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.rv);
+        progressBar = (ProgressBar) findViewById(R.id.main_progress);
+        linearMain = (LinearLayout) findViewById(R.id.linear_main);
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-//        encyclopedias = getDummyData();
-//
-//        EncyclopediaRVAdapter rvAdapter = new EncyclopediaRVAdapter(encyclopedias);
+//        EncyclopediaRVAdapter rvAdapter = new EncyclopediaRVAdapter(getDummyData(););
 //        recyclerView.setAdapter(rvAdapter);
 
         WisataTask mAuthTask = new WisataTask(4, 0);
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*    private List<Encyclopedia> getDummyData(){
+ /*   private List<Encyclopedia> getDummyData(){
         List<Encyclopedia> contents = new ArrayList<Encyclopedia>();
 
         List<Integer> images = new ArrayList<Integer>();
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPreExecute() {
+            showProgressBar();
             super.onPreExecute();
         }
 
@@ -184,10 +190,12 @@ public class MainActivity extends AppCompatActivity {
 
             EncyclopediaRVAdapter rvAdapter = new EncyclopediaRVAdapter(encyclopedias);
             recyclerView.setAdapter(rvAdapter);
+            hideProgressBar();
         }
 
         @Override
         protected void onCancelled() {
+            hideProgressBar();
         }
     }
 
@@ -202,5 +210,14 @@ public class MainActivity extends AppCompatActivity {
         return bf.toString();
     }
 
+    private void showProgressBar(){
+        progressBar.setVisibility(View.VISIBLE);
+        linearMain.setVisibility(View.INVISIBLE);
+    }
+
+    private void hideProgressBar(){
+        progressBar.setVisibility(View.INVISIBLE);
+        linearMain.setVisibility(View.VISIBLE);
+    }
 
 }

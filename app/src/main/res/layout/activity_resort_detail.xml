@@ -6,34 +6,130 @@
     android:layout_height="match_parent"
     tools:context="com.app.wimba.blams.activity.ResortDetailActivity">
 
+    <ProgressBar
+        android:id="@+id/resort_detail_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingTop="30sp"/>
+
     <LinearLayout
+        android:id="@+id/linear_resort_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="5pt">
+        android:padding="5pt"
+        >
 
+        <!-- Nearest Restaurants Layout -->
         <TextView
             android:id="@+id/kulinerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kuliner sekitar ... "
-            android:textSize="15sp"
-            />
+            android:text="Kuliner sekitar"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
 
         <android.support.v7.widget.RecyclerView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rvKuliner"
-            />
-
-
-        <TextView
-            android:id="@+id/detailWisataTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="Detail Wisata"/>
+            android:id="@+id/rvKuliner"
+            android:orientation="horizontal"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_red_light"/>
+
+
+        <!--Description Layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civ_resort_detail_icon_photo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@android:color/holo_red_dark"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="1dp"
+                    android:layout_marginRight="6dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_resort_detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telunjuk Raung"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_resort_detail_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Desa Jambewangi"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_resort_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Small description for resort, Small description for resort, Small description for resort, Small description for resort, Small description for resortmSmall description for resort"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+            <GridView
+                android:id="@+id/gridView_resort_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:columnWidth="200dp"
+                android:numColumns="2"
+                android:gravity="center"
+                android:stretchMode="columnWidth" >
+
+            </GridView>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
